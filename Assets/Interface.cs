@@ -10,13 +10,25 @@ public class Interface : MonoBehaviour
 {
 
   public GameObject pausePanel;
+
+#if UNITY_IOS
+  public string appId="3887150";
+#else
   public string appId="3887151";
+#endif
     // Start is called before the first frame update
     void Start()
     {
       Advertisement.Initialize(appId,false);
 
-      MobileAds.Initialize(appIdAdmob);
+      RequestConfiguration requestConfiguration =
+          new RequestConfiguration.Builder()
+          .SetSameAppKeyEnabled(true).build();
+      MobileAds.SetRequestConfiguration(requestConfiguration);
+
+        // Initialize the Google Mobile Ads SDK.
+        MobileAds.Initialize(initStatus => { });
+
       RequestConfigurationAd();
 
     }
@@ -71,8 +83,15 @@ public class Interface : MonoBehaviour
     private InterstitialAd intersitional;
     private BannerView banner;
 
-    private string appIdAdmob="ca-app-pub-4962234576866611~3768162882";
-    private string intersitionalId="ca-app-pub-4962234576866611/1677809250";
+#if UNITY_IOS
+    public string appIdAdmob="ca-app-pub-4962234576866611~8935289308";
+    public string intersitionalId="ca-app-pub-4962234576866611/4595485396";
+    public string bannerId="ca-app-pub-4962234576866611/4595485396";
+#else
+    public string appIdAdmob="ca-app-pub-4962234576866611~3768162882";
+    public string intersitionalId="ca-app-pub-4962234576866611/1677809250";
+    public string bannerId="ca-app-pub-4962234576866611/3385019504";
+#endif
 
      AdRequest AdRequestBuild(){
          return new AdRequest.Builder().Build();
