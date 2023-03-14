@@ -12,9 +12,9 @@ public class Interface : MonoBehaviour
   public GameObject pausePanel;
 
 #if UNITY_IOS
-  public string appId="3887150";
+  private string appId="3887150";
 #else
-  public string appId="3887151";
+  private string appId="3887151";
 #endif
     // Start is called before the first frame update
     void Start()
@@ -84,13 +84,13 @@ public class Interface : MonoBehaviour
     private BannerView banner;
 
 #if UNITY_IOS
-    public string appIdAdmob="ca-app-pub-4962234576866611~8935289308";
-    public string intersitionalId="ca-app-pub-4962234576866611/4595485396";
-    public string bannerId="ca-app-pub-4962234576866611/4595485396";
+    private string appIdAdmob="ca-app-pub-4962234576866611~8935289308";
+    private string intersitionalId="ca-app-pub-4962234576866611/4595485396";
+    private string bannerId="ca-app-pub-4962234576866611/4595485396";
 #else
-    public string appIdAdmob="ca-app-pub-4962234576866611~3768162882";
-    public string intersitionalId="ca-app-pub-4962234576866611/1677809250";
-    public string bannerId="ca-app-pub-4962234576866611/3385019504";
+    private string appIdAdmob="ca-app-pub-4962234576866611~3768162882";
+    private string intersitionalId="ca-app-pub-4962234576866611/1677809250";
+    private string bannerId="ca-app-pub-4962234576866611/3385019504";
 #endif
 
      AdRequest AdRequestBuild(){

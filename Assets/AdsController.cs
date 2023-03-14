@@ -5,7 +5,11 @@ using UnityEngine.Advertisements;
 
 public class AdsController : MonoBehaviour
 {
-  public string appId="3887151";
+#if UNITY_IOS
+  private string appId="3887150";
+#else
+  private string appId="3887151";
+#endif
     // Start is called before the first frame update
     void Start()
     {

@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 1783243790}
   levelid: 1
-  maxHeadNum: 120
+  maxHeadNum: 40
 --- !u!1 &16763823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,7 +2686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 1465209364}
   levelid: 7
-  maxHeadNum: 160
+  maxHeadNum: 100
 --- !u!1 &194423830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,7 +2911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 250399698}
   levelid: 2
-  maxHeadNum: 130
+  maxHeadNum: 50
 --- !u!1 &199342533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3937,7 +3937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 79767739}
   levelid: 4
-  maxHeadNum: 140
+  maxHeadNum: 70
 --- !u!1 &295591986
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,10 +4685,10 @@ RectTransform:
   m_Father: {fileID: 735018948}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.7, y: -33.3}
-  m_SizeDelta: {x: 1018.5, y: 1829}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -7.700012, y: -33.299988}
+  m_SizeDelta: {x: 218.5, y: 495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439364813
 MonoBehaviour:
@@ -8517,7 +8517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 704352563}
   levelid: 8
-  maxHeadNum: 180
+  maxHeadNum: 110
 --- !u!1 &856362269
 GameObject:
   m_ObjectHideFlags: 0
@@ -11555,7 +11555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 1258002035}
   levelid: 5
-  maxHeadNum: 150
+  maxHeadNum: 80
 --- !u!1 &1192924112
 GameObject:
   m_ObjectHideFlags: 0
@@ -12731,7 +12731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0805cc22163172478b0460094a2afda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appId: 3887151
 --- !u!1 &1258002033
 GameObject:
   m_ObjectHideFlags: 0
@@ -13277,7 +13276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 748963253}
   levelid: 0
-  maxHeadNum: 100
+  maxHeadNum: 30
 --- !u!1001 &1311768922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13606,8 +13605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baefda9ed09eee42bb4dff3c6079eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appId: ca-app-pub-4962234576866611~3768162882
-  bannerId: ca-app-pub-4962234576866611/3385019504
 --- !u!1 &1354252836
 GameObject:
   m_ObjectHideFlags: 0
@@ -15100,7 +15097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 969760188}
   levelid: 3
-  maxHeadNum: 130
+  maxHeadNum: 60
 --- !u!1 &1505891970
 GameObject:
   m_ObjectHideFlags: 0
@@ -18239,7 +18236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headCnt: {fileID: 2061264515}
   levelid: 9
-  maxHeadNum: 200
+  maxHeadNum: 120
 --- !u!1 &1884401851
 GameObject:
   m_ObjectHideFlags: 0

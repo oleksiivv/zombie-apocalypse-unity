@@ -10,13 +10,13 @@ public class AdmobController : MonoBehaviour
     private BannerView banner;
 
 #if UNITY_IOS
-    public string appId="ca-app-pub-4962234576866611~8935289308";
+    private string appId="ca-app-pub-4962234576866611~8935289308";
     //public string intersitionalId="ca-app-pub-4962234576866611/4595485396";
-    public string bannerId="ca-app-pub-4962234576866611/4595485396";
+    private string bannerId="ca-app-pub-4962234576866611/4595485396";
 #else
-    public string appId="ca-app-pub-4962234576866611~3768162882";
+    private string appId="ca-app-pub-4962234576866611~3768162882";
     //public string intersitionalId="ca-app-pub-4962234576866611/1677809250";
-    public string bannerId="ca-app-pub-4962234576866611/3385019504";
+    private string bannerId="ca-app-pub-4962234576866611/3385019504";
 #endif
 
     void Start(){
