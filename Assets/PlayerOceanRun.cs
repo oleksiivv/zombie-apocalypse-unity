@@ -171,9 +171,9 @@ public string appId="3887151";
       if(iScore>PlayerPrefs.GetInt("BestDino")){
         PlayerPrefs.SetInt("BestDino",iScore);
       }
-      if(Advertisement.IsReady("video")){
-        Advertisement.Show("video");
-      }
+      
+      Advertisement.Show("video");
+      
       StartCoroutine(loadAsync(id));
     }
 

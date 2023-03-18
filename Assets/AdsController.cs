@@ -25,11 +25,11 @@ public class AdsController : MonoBehaviour
     }
 
     public void watchAdd(){
-      ShowOptions options = new ShowOptions();
-      options.resultCallback = AdCallbackHandler;
-      if(Advertisement.IsReady("rewardedVideo")){
-        Advertisement.Show("rewardedVideo",options);
-      }
+      //ShowOptions options = new ShowOptions(){
+      //  resultCallback = AdCallbackHandler
+      //};
+      
+      //Advertisement.Show("rewardedVideo",options);
     }
 
 

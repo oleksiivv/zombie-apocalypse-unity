@@ -52,12 +52,7 @@ public class Interface : MonoBehaviour
 
     public void openScene(int id){
       if(id!=Application.loadedLevel){
-        if(Advertisement.IsReady("video")){
-          Advertisement.Show("video");
-        }
-        else{
-          showIntersitionalAd();
-        }
+        showIntersitionalAd();
       }
       Time.timeScale=1;
       StartCoroutine(loadAsync(id));

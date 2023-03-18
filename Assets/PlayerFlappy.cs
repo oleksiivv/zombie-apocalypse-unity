@@ -147,9 +147,8 @@ bool started=false;
       if(iScore>PlayerPrefs.GetInt("BestFlappy")){
         PlayerPrefs.SetInt("BestFlappy",iScore);
       }
-      if(Advertisement.IsReady("video")){
-        Advertisement.Show("video");
-      }
+      Advertisement.Show("video");
+      
       StartCoroutine(loadAsync(id));
     }
 
