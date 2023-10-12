@@ -19,36 +19,4 @@ public class AdmobController : MonoBehaviour
     private string bannerId="ca-app-pub-4962234576866611/3385019504";
 #endif
 
-    void Start(){
-        RequestConfiguration requestConfiguration =
-            new RequestConfiguration.Builder()
-            .SetSameAppKeyEnabled(true).build();
-        MobileAds.SetRequestConfiguration(requestConfiguration);
-
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(initStatus => { });
-        //RequestBannerAd();
-        //RequestConfigurationAd();
-        
-    }
-
-    //baner
-
-    public void RequestBannerAd(){
-        banner=new BannerView(bannerId,AdSize.Banner,AdPosition.Bottom);
-        AdRequest request = AdRequestBannerBuild();
-        banner.LoadAd(request);
-    }
-
-    public void DestroyBanner(){
-        if(banner!=null){
-            banner.Destroy();
-        }
-    }
-
-
-
-    AdRequest AdRequestBannerBuild(){
-        return new AdRequest.Builder().Build();
-    }
 }
