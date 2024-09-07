@@ -29,6 +29,7 @@ public class Interface : MonoBehaviour
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(initStatus => {
           LoadLoadInterstitialAd();
+          showIntersitionalAd();
         });
     }
 
@@ -55,7 +56,22 @@ public class Interface : MonoBehaviour
       Time.timeScale=1;
       StartCoroutine(loadAsync(id));
 
-      showIntersitionalAd();
+    }
+
+        public void loadLevel(int id){
+      //if(id!=Application.loadedLevel){
+      //}
+      Time.timeScale=1;
+      StartCoroutine(loadAsync(id));
+
+    }
+
+    public void restart(){
+      //if(id!=Application.loadedLevel){
+      //}
+      Time.timeScale=1;
+      StartCoroutine(loadAsync(Application.loadedLevel));
+
     }
 
     public GameObject loadScene;
