@@ -30,6 +30,8 @@ public class Interface : MonoBehaviour
         MobileAds.Initialize(initStatus => {
           LoadLoadInterstitialAd();
         });
+
+        Time.timeScale=1;
     }
 
     // Update is called once per frame

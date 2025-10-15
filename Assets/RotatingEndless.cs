@@ -10,11 +10,15 @@ public class RotatingEndless : MonoBehaviour
   public Image shootButton;
 
     public Joystick stick;
+
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
       move=true;
 
+      animator=GetComponentInChildren<Animator>();
     }
     public static Vector3 worldPosition;
 
@@ -51,12 +55,48 @@ public class RotatingEndless : MonoBehaviour
 
       if(GetComponent<PlayerControllerEndlessMode>().die==false && GetComponent<PlayerControllerEndlessMode>().win==false){
         transform.rotation = Quaternion.LookRotation(worldPosition -transform.position,new Vector3(0,1,0));
+
+        if( transform.position.x >= -2.5f && transform.position.x <= 2.5f && transform.position.z >= -7f && transform.position.z <= 0f){
+          if(Input.GetMouseButton(0)){
+            transform.Translate(Vector3.forward/100);
+            animator.SetBool("Run", true);
+          }else
+          {
+            animator.SetBool("Run", false);
+          }
+        }else
+        {
+          transform.Translate(-Vector3.forward/50);
+          animator.SetBool("Run", true);
+        }
+      }
+      else
+      {
+        animator.SetBool("Run", false);
       }
     }
 
     else{
       if(GetComponent<PlayerControllerEndlessMode>().die==false && GetComponent<PlayerControllerEndlessMode>().win==false  && !newRect.Contains(Input.mousePosition)){
         transform.rotation = Quaternion.LookRotation(worldPosition -transform.position,new Vector3(0,1,0));
+
+        if( transform.position.x >= -2.5f && transform.position.x <= 2.5f && transform.position.z >= -7f && transform.position.z <= 0f){
+          if(Input.GetMouseButton(0)){
+            transform.Translate(Vector3.forward/100);
+            animator.SetBool("Run", true);
+          }else
+          {
+            animator.SetBool("Run", false);
+          }
+        }else
+        {
+          transform.Translate(-Vector3.forward/50);
+          animator.SetBool("Run", true);
+        }
+      }
+      else
+      {
+        animator.SetBool("Run", false);
       }
 
     }
@@ -71,6 +111,21 @@ public class RotatingEndless : MonoBehaviour
       float heading = Mathf.Atan2(stick.Horizontal,stick.Vertical);
 
       transform.rotation=Quaternion.Euler(0f,heading*Mathf.Rad2Deg,0f);
+
+      if(transform.position.x >= -2.5f && transform.position.x <= 2.5f && transform.position.z >= -7f && transform.position.z <= 0f){
+        if(stick.Horizontal!= 0 && stick.Vertical != 0){
+          transform.Translate(Vector3.forward/100);
+          animator.SetBool("Run", true);
+        }
+        else
+        {
+          animator.SetBool("Run", false);
+        }
+      }else
+      {
+        transform.Translate(-Vector3.forward/50);
+        animator.SetBool("Run", true);
+      }
     }
   }
 

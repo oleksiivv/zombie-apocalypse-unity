@@ -9,11 +9,14 @@ public class Rotating : MonoBehaviour
   public Image shootButton;
 
   public Joystick stick;
+
+  private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
       move=true;
 
+      animator=GetComponentInChildren<Animator>();
     }
     public static Vector3 worldPosition;
 
@@ -38,10 +41,6 @@ public class Rotating : MonoBehaviour
 
       if(move && Time.timeScale==1 && Input.GetMouseButton(0) && !newRect.Contains(Input.mousePosition)){
 
-
-
-
-
         Debug.Log(Input.mousePosition.y);
         Plane plane = new Plane(Vector3.up, 0.62f);
 
@@ -52,19 +51,51 @@ public class Rotating : MonoBehaviour
             worldPosition = ray.GetPoint(distance);
         }
 
-
         worldPosition=new Vector3(worldPosition.x,-0.62f,worldPosition.z);
-
-
 
       if(GetComponent<PlayerController>().die==false && GetComponent<PlayerController>().win==false){
         transform.rotation = Quaternion.LookRotation(worldPosition -transform.position,new Vector3(0,1,0));
+
+        if(transform.position.x >= -1.5f && transform.position.x <= 1.5f && transform.position.z >= -6f && transform.position.z <= -3f){
+           if(Input.GetMouseButton(0)){
+            transform.Translate(Vector3.forward/100);
+            animator.SetBool("Run", true);
+           }else
+           {
+             animator.SetBool("Run", false);
+           }
+        }else
+        {
+          transform.Translate(-Vector3.forward/50);
+          animator.SetBool("Run", true);
+        }
+      }else
+      {
+        animator.SetBool("Run", false);
       }
     }
 
     else{
       if(GetComponent<PlayerController>().die==false && GetComponent<PlayerController>().win==false &&  !newRect.Contains(Input.mousePosition)){
         transform.rotation = Quaternion.LookRotation(worldPosition -transform.position,new Vector3(0,1,0));
+
+        if(transform.position.x >= -1.5f && transform.position.x <= 1.5f && transform.position.z >= -6f && transform.position.z <= -3f){
+          if(Input.GetMouseButton(0)){
+            transform.Translate(Vector3.forward/100);
+            animator.SetBool("Run", true);
+          }else
+          {
+            animator.SetBool("Run", false);
+          }
+        }else
+        {
+          transform.Translate(-Vector3.forward/50);
+          animator.SetBool("Run", true);
+        }
+      }
+      else
+      {
+        animator.SetBool("Run", false);
       }
 
     }
@@ -76,6 +107,25 @@ public class Rotating : MonoBehaviour
        float heading = Mathf.Atan2(stick.Horizontal,stick.Vertical);
 
        transform.rotation=Quaternion.Euler(0f,heading*Mathf.Rad2Deg,0f);
+
+       if(transform.position.x >= -1.5f && transform.position.x <= 1.5f && transform.position.z >= -6f && transform.position.z <= -3f){
+         if(stick.Horizontal!= 0 && stick.Vertical != 0){
+           transform.Translate(Vector3.forward/100);
+           animator.SetBool("Run", true);
+         }
+         else
+         {
+           animator.SetBool("Run", false);
+         }
+       }else
+       {
+         transform.Translate(-Vector3.forward/50);
+         animator.SetBool("Run", true);
+       }
+
+     }else
+     {
+       animator.SetBool("Run", false);
      }
 
 
