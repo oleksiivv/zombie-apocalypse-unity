@@ -14,7 +14,7 @@ public class AdsController : MonoBehaviour
     void Start()
     {
 
-      Advertisement.Initialize(appId,false);
+//      Advertisement.Initialize(appId,false);
 
     }
 

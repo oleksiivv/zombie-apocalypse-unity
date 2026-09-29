@@ -31,7 +31,10 @@ public class Interface : MonoBehaviour
           LoadLoadInterstitialAd();
         });
 
-        Time.timeScale=1;
+    Time.timeScale = 1;
+        
+        QualitySettings.vSyncCount = 0; // Set vSyncCount to 0 so that using .targetFrameRate is enabled.
+        Application.targetFrameRate = 50;
     }
 
     // Update is called once per frame
